@@ -1,0 +1,98 @@
+{
+  "info": {
+    "_postman_id": "d5cc14b4-2d15-4e39-a082-dd10718d061a",
+    "name": "joins",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "31909695"
+  },
+  "item": [
+    {
+      "name": "inner-join",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:3000/inner",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "3000",
+          "path": ["inner"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "left-join",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:3000/left",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "3000",
+          "path": ["left"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "right-join",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"userId\": \"e07763eb-28dd-4873-898e-e45e77a335ec\",\n    \"productId\":\"dac53b71-cc9c-48dd-ab84-de6929a53520\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:3000/right",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "3000",
+          "path": ["right"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "outer-join",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"userId\": \"e07763eb-28dd-4873-898e-e45e77a335ec\",\n    \"productId\":\"dac53b71-cc9c-48dd-ab84-de6929a53520\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:3000/outer",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "3000",
+          "path": ["outer"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "cross-join",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
