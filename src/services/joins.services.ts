@@ -2,8 +2,8 @@ import { count, eq } from "drizzle-orm";
 import { db } from "../db/db.js";
 import { order, products, users } from "../db/schema.js";
 
-export const InnerJoin = () => {
-  return db
+export const InnerJoin = async () => {
+  return await db
     .select({
       userName: users.name,
       email: users.email,
@@ -16,8 +16,8 @@ export const InnerJoin = () => {
     .innerJoin(products, eq(order.productId, products.id));
 };
 
-export const LeftJoin = () => {
-  return db
+export const LeftJoin = async () => {
+  return await db
     .select({
       userName: users.name,
       email: users.email,
@@ -28,8 +28,8 @@ export const LeftJoin = () => {
     .leftJoin(products, eq(order.productId, products.id));
 };
 
-export const RightJoin = () => {
-  return db
+export const RightJoin = async () => {
+  return await db
     .select({
       userName: users.name,
       totalOrders: count(order.id),
@@ -39,8 +39,8 @@ export const RightJoin = () => {
     .groupBy(users.id);
 };
 
-export const CrossJoin = () => {
-  return db
+export const CrossJoin = async () => {
+  return await db
     .select({
       userName: users.name,
       orderId: order.id,
@@ -49,8 +49,8 @@ export const CrossJoin = () => {
     .fullJoin(order, eq(users.id, order.userId));
 };
 
-export const OuterJoin = () => {
-  return db
+export const OuterJoin = async () => {
+  return await db
     .select({
       userName: users.name,
       orderId: order.id,
@@ -59,8 +59,8 @@ export const OuterJoin = () => {
     .crossJoin(order);
 };
 
-export const PracticeJoin = () => {
-  return db
+export const PracticeJoin = async () => {
+  return await db
     .select({
       name: users.name,
       email: users.email,
